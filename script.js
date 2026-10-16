@@ -1,4 +1,3 @@
-
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 
@@ -260,3 +259,4 @@ if ($("#year")) $("#year").textContent = new Date().getFullYear();
 drawChart();
 refreshMarketPrices();
 setInterval(refreshMarketPrices, 60000);
+
