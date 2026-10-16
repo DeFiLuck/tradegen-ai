@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06111a">
+  <title>TradeGen AI — Premium Signals</title>
+  <meta name="description" content="TradeGen AI premium market signals dashboard for forex, gold and crypto.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="TradeGen AI home">
+        <span class="brand-mark">↗</span>
+        <span><strong>TradeGen <em>AI</em></strong><small>Smarter Signals. Better Decisions.</small></span>
+      </a>
+      <div class="market-strip" aria-label="Demo market prices">
+        <div><small>EUR/USD</small><b>1.0864</b><span class="up">+0.32%</span></div>
+        <div><small>XAUUSD</small><b>2,657.40</b><span class="up">+0.58%</span></div>
+        <div><small>BTC/USD</small><b>67,432.10</b><span class="up">+1.24%</span></div>
+      </div>
+      <div class="account"><span class="online-dot"></span><span><b>Signal engine</b><small>Demo mode</small></span><span class="avatar">TG</span></div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <nav aria-label="Main navigation">
+          <button class="nav-item active" data-view="dashboard"><span>⌂</span> Dashboard</button>
+          <button class="nav-item" data-view="signals"><span>⌁</span> Live Signals</button>
+          <button class="nav-item" data-view="markets"><span>▥</span> Markets</button>
+          <button class="nav-item" data-view="journal"><span>▤</span> Signal History</button>
+          <button class="nav-item" data-view="membership"><span>♧</span> Membership</button>
+          <button class="nav-item" data-view="settings"><span>⚙</span> Settings</button>
+        </nav>
+        <div class="sidebar-promo">
+          <div class="orb">✳</div>
+          <b>AI-assisted market analysis</b>
+          <p>Clear setups, structured risk levels, and transparent signal history.</p>
+          <span class="demo-pill">PREVIEW BUILD</span>
+        </div>
+        <p class="sidebar-note">Trading involves risk. Signals are not guarantees of profit.</p>
+      </aside>
+
+      <main class="main-content">
+        <section class="page-heading">
+          <div><p class="eyebrow">YOUR MARKET COMMAND CENTER</p><h1 id="page-title">Dashboard overview</h1><p class="muted">Monitor demo signals across forex, gold, and crypto.</p></div>
+          <div class="heading-actions"><span class="status"><i></i> Interface online</span><button class="button button-secondary" id="refresh-btn">↻ Refresh demo</button></div>
+        </section>
+
+        <div class="notice"><strong>DEMO DATA</strong><span>This is a functional visual prototype. Prices and signals are illustrative, not live market data or financial advice.</span></div>
+
+        <section class="metrics-grid" aria-label="Performance summary">
+          <article class="metric-card"><div class="metric-label">Signals today <span>↗</span></div><strong id="metric-signals">12</strong><small class="positive">+3 vs yesterday</small><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+          <article class="metric-card"><div class="metric-label">Demo win rate <span>◎</span></div><strong>68.4%</strong><small>Illustrative historical metric</small><div class="progress"><i style="width:68.4%"></i></div></article>
+          <article class="metric-card"><div class="metric-label">Tracked markets <span>⌁</span></div><strong>18</strong><small>Forex · Gold · Crypto</small><div class="sparkline">▁▂▃▂▄▃▅▄▆▅▇</div></article>
+          <article class="metric-card"><div class="metric-label">Membership <span>✦</span></div><strong class="member-value">Starter</strong><small>Subscription checkout not connected</small><button class="text-button" data-view-link="membership">Explore plans →</button></article>
+        </section>
+
+        <section class="content-grid">
+          <article class="panel chart-panel">
+            <div class="panel-heading"><div><h2>Market movement</h2><p class="muted">Illustrative candlestick chart</p></div><div class="chart-tools"><select id="chart-market" aria-label="Choose chart market"><option>XAUUSD</option><option>EUR/USD</option><option>BTC/USD</option><option>GBP/USD</option></select><select aria-label="Chart timeframe"><option>15m</option><option>1h</option><option>4h</option><option>1D</option></select></div></div>
+            <div class="chart-legend"><span><i class="legend-green"></i> Bullish candle</span><span><i class="legend-red"></i> Bearish candle</span><span class="legend-line">━ EMA 20</span></div>
+            <div class="chart-wrap"><svg id="candlestick-chart" viewBox="0 0 800 340" role="img" aria-label="Illustrative candlestick chart showing market movement"></svg></div>
+            <div class="chart-footer"><span>Market structure <b class="positive">Uptrend (demo)</b></span><span>Updated <b id="updated-at">just now</b></span></div>
+          </article>
+
+          <article class="panel signals-panel" id="signals-section">
+            <div class="panel-heading"><div><h2>Active signals</h2><p class="muted">Structured entries and risk levels</p></div><span class="live-label"><i></i> Demo feed</span></div>
+            <div class="filter-row" role="group" aria-label="Filter signals">
+              <button class="filter active" data-filter="All">All</button><button class="filter" data-filter="Forex">Forex</button><button class="filter" data-filter="Gold">Gold</button><button class="filter" data-filter="Crypto">Crypto</button>
+            </div>
+            <div class="signal-list" id="signal-list">
+              <article class="signal-card" data-category="Gold"><div class="signal-top"><div class="asset-icon gold">Au</div><div class="asset-name"><b>XAUUSD</b><small>Gold · 15m</small></div><span class="signal-badge buy">BUY</span></div><div class="signal-levels"><div><small>Entry</small><b>2,657.40</b></div><div><small>Stop loss</small><b>2,652.40</b></div><div><small>Take profit</small><b>2,667.20</b></div></div><div class="signal-bottom"><span class="confidence">↗ 87% demo confidence</span><span>Preview</span></div></article>
+              <article class="signal-card" data-category="Forex"><div class="signal-top"><div class="asset-icon euro">€</div><div class="asset-name"><b>EUR/USD</b><small>Forex · 1h</small></div><span class="signal-badge buy">BUY</span></div><div class="signal-levels"><div><small>Entry</small><b>1.0864</b></div><div><small>Stop loss</small><b>1.0820</b></div><div><small>Take profit</small><b>1.0912</b></div></div><div class="signal-bottom"><span class="confidence">↗ 79% demo confidence</span><span>Preview</span></div></article>
+              <article class="signal-card" data-category="Crypto"><div class="signal-top"><div class="asset-icon bitcoin">₿</div><div class="asset-name"><b>BTC/USD</b><small>Crypto · 15m</small></div><span class="signal-badge sell">SELL</span></div><div class="signal-levels"><div><small>Entry</small><b>67,432</b></div><div><small>Stop loss</small><b>68,050</b></div><div><small>Take profit</small><b>66,850</b></div></div><div class="signal-bottom"><span class="confidence">↘ 72% demo confidence</span><span>Preview</span></div></article>
+              <article class="signal-card" data-category="Forex"><div class="signal-top"><div class="asset-icon pound">£</div><div class="asset-name"><b>GBP/USD</b><small>Forex · 4h</small></div><span class="signal-badge sell">SELL</span></div><div class="signal-levels"><div><small>Entry</small><b>1.2997</b></div><div><small>Stop loss</small><b>1.3040</b></div><div><small>Take profit</small><b>1.2948</b></div></div><div class="signal-bottom"><span class="confidence">↘ 74% demo confidence</span><span>Preview</span></div></article>
+            </div>
+            <button class="button button-outline full-width" id="view-all-signals">View all signals</button>
+          </article>
+        </section>
+
+        <section class="bottom-grid">
+          <article class="panel performance-panel"><div class="panel-heading"><div><h2>Signal activity</h2><p class="muted">Sample activity over the last 7 days</p></div><span class="tiny-tag">DEMO</span></div><div class="activity-chart"><div class="activity-y"><span>12</span><span>8</span><span>4</span><span>0</span></div><div class="activity-bars"><div style="height:35%"><i></i><small>Mon</small></div><div style="height:58%"><i></i><small>Tue</small></div><div style="height:46%"><i></i><small>Wed</small></div><div style="height:76%"><i></i><small>Thu</small></div><div style="height:62%"><i></i><small>Fri</small></div><div style="height:88%"><i></i><small>Sat</small></div><div style="height:68%"><i></i><small>Sun</small></div></div></div></article>
+          <article class="panel membership-panel" id="membership-card"><div class="panel-heading"><div><h2>Unlock premium</h2><p class="muted">Subscription plans can be connected next</p></div><span class="premium-star">✦</span></div><p class="membership-copy">Give members a clean home for premium alerts, detailed setups, and signal history.</p><ul><li>Premium signal feed</li><li>Forex, gold and crypto coverage</li><li>Risk levels and archived setups</li><li>Member-only dashboard access</li></ul><button class="button button-primary" data-view-link="membership">Configure plans <span>→</span></button></article>
+        </section>
+
+        <section class="extra-view panel hidden" id="extra-view" aria-live="polite"></section>
+        <footer class="footer"><span>↗ <b>TradeGen <em>AI</em></b></span><span>Market analytics preview · Not financial advice</span><span>© <span id="year"></span> TradeGen AI</span></footer>
+      </main>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
